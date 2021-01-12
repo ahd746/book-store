@@ -1,12 +1,13 @@
+import * as types from "../types";
 const reducer = (books = [], action) => {
   switch (action.type) {
-    case "GET_ALL":
+    case types.GET_ALL:
       return action.payload;
-    case "GET_ONE":
+    case types.GET_ONE:
       return action.payload;
-    case "CREATE":
-    case "UPDATE":
-    case "DELETE":
+    case types.CREATE:
+    case types.UPDATE:
+    case types.DELETE:
       return books;
     default:
       return books;

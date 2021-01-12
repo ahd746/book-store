@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Image } from "react-bootstrap";
 import FileBase from "react-file-base64";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -22,6 +22,13 @@ const BookForm = ({ type, initBook }) => {
     <Redirect to="/" />
   ) : (
     <Form onSubmit={handleSubmit}>
+      {book.image && (
+        <Image
+          src={book.image}
+          className="mb-3"
+          style={{ width: "14rem", height: "20rem" }}
+        />
+      )}
       <Form.Group>
         <Form.Control
           type="text"
